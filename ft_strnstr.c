@@ -6,7 +6,7 @@
 /*   By: takonaga <takonaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:00:13 by takonaga          #+#    #+#             */
-/*   Updated: 2022/10/13 19:13:34 by takonaga         ###   ########.fr       */
+/*   Updated: 2022/10/17 20:31:58 by takonaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ char	*ft_strnstr(const char *str, const char *seek, size_t len)
 	size_t	j;
 	size_t	seek_len;
 
-	if (!*seek)
-		return ((char *)str);
-	if (len == 0)
+	if (len == 0 && seek != NULL)
 		return (NULL);
 	seek_len = ft_strlen(seek);
 	i = 0;
@@ -37,14 +35,10 @@ char	*ft_strnstr(const char *str, const char *seek, size_t len)
 			return ((char *)&str[i]);
 		i++;
 	}
-	return (NULL);
+	return ((char *)str);
 }
 
 // int main(void)
 // {
-// 	char *a = "ABCdefg";
-// 	char b[] = "C";
-// 	size_t	len = 6;
-// 	printf("%s\n", ft_strnstr(a, b, len));
-// 	printf("%s\n", strnstr(a, b, len));
+// 	printf("%s\n", strnstr(NULL, "aiu", 0));
 // }

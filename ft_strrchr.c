@@ -6,7 +6,7 @@
 /*   By: takonaga <takonaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 07:22:11 by takonaga          #+#    #+#             */
-/*   Updated: 2022/10/11 08:17:37 by takonaga         ###   ########.fr       */
+/*   Updated: 2022/10/16 06:08:52 by takonaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strrchr(const char *s, int c)
 {
 	char	*tmp;
 
-	tmp = (0);
+	tmp = NULL;
 	while (*s != '\0')
 	{
 		if (*s == (char)c)

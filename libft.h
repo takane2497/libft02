@@ -6,7 +6,7 @@
 /*   By: takonaga <takonaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 21:42:15 by takonaga          #+#    #+#             */
-/*   Updated: 2022/10/16 02:21:17 by takonaga         ###   ########.fr       */
+/*   Updated: 2022/10/17 20:37:01 by takonaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,7 @@ char			*ft_strnstr(const char *str, const char *seek, size_t len);
 int				ft_atoi(const char *nptr);
 void			*ft_calloc(size_t count, size_t size);
 char			*ft_strdup(const char *s1);
+char			*ft_substr(char const *s, unsigned int start, size_t len);
+char			*ft_strjoin(char const *s1, char const *s2);
 
 #endif

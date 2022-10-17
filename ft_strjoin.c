@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: takonaga <takonaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 06:37:08 by takonaga          #+#    #+#             */
-/*   Updated: 2022/10/16 07:05:40 by takonaga         ###   ########.fr       */
+/*   Created: 2022/10/17 20:29:07 by takonaga          #+#    #+#             */
+/*   Updated: 2022/10/17 21:18:48 by takonaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	if ('A' <= c && c <= 'Z')
-		return (c + ('a' - 'A'));
-	return (c);
-}
+	char	*newstr;
+	size_t	len;
 
-/*
-int main(void)
-{
-	int a = 'H';
-	printf("%c", ft_tolower(a));
+	if (s1 == NULL || s2 == NULL)
+		returun(NULL);
+	len = ft_strlen(s1) + ft_stlen(s2);
+	newstr = (char *)malloc(sizeof(char) * (len + 1));
+	if (newstr == NULL)
+		return (NULL);
+	ft_strlcpy(newstr, s1, ft_strlen(s1) + 1);
+	ft_strlcat(newstr, s2, len + 1);
+	return (newstr);
 }
-*/

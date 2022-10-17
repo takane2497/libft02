@@ -6,12 +6,11 @@
 /*   By: takonaga <takonaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:14:40 by takonaga          #+#    #+#             */
-/*   Updated: 2022/10/15 03:51:34 by takonaga         ###   ########.fr       */
+/*   Updated: 2022/10/16 07:01:04 by takonaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
 
 static const char	*ft_symbol_flag(const char *nptr, int *symbol_flag)
 {
@@ -41,15 +40,13 @@ int	ft_atoi(const char *nptr)
 	nptr = ft_symbol_flag(nptr, &symbol_flag);
 	num = 0;
 	while (ft_isdigit(*nptr))
-	{
-		if (symbol_flag == 1 && (num > ((LONG_MAX - (*nptr - 48))
-					* symbol_flag) / 10))
-			return ((int)LONG_MAX);
-		else if (symbol_flag == -1 && (num < ((LONG_MIN - (*nptr - 48))
-					* symbol_flag) / 10))
-			return ((int)LONG_MIN);
-		num = (10 * num) + ((*nptr - 48) * symbol_flag);
-		nptr++;
-	}
-	return ((int)num);
+		num = (10 * num) + (*nptr++ - '0');
+	return ((int)num * symbol_flag);
 }
+
+// int main (void)
+// {
+// 	int	i ; 
+// 	i = ft_atoi("121345");
+// 	printf("%d",i);
+// }

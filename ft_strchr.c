@@ -6,7 +6,7 @@
 /*   By: takonaga <takonaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 07:33:06 by takonaga          #+#    #+#             */
-/*   Updated: 2022/10/11 08:17:22 by takonaga         ###   ########.fr       */
+/*   Updated: 2022/10/16 06:08:54 by takonaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strchr(const char *s, int c)
 	}
 	if (c == '\0')
 		return ((char *)s);
-	return (0);
+	return (NULL);
 }
 
 // int main(void)
