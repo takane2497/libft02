@@ -6,13 +6,13 @@
 /*   By: takonaga <takonaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 17:36:56 by takonaga          #+#    #+#             */
-/*   Updated: 2022/10/19 21:10:06 by takonaga         ###   ########.fr       */
+/*   Updated: 2022/10/19 23:05:18 by takonaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_words(char const *s, char c)
+static size_t	count_words(char const *s, char c)
 {
 	size_t	words;
 	size_t	i;
@@ -32,7 +32,7 @@ static int	count_words(char const *s, char c)
 	return (words);
 }
 
-static int	move_len(const char *s, char c, int start)
+static size_t	move_len(const char *s, char c, int start)
 {
 	size_t	i;
 
@@ -56,25 +56,17 @@ static char	**allfree(char **ptr)
 	return (NULL);
 }
 
-void	*ft_xmalloc(size_t bytes)
-{
-	void	*temp;
-
-	temp = malloc(bytes);
-	if (temp == 0)
-		return (NULL);
-	return (temp);
-}
-
 char	**ft_split(char const *s, char c)
 {
 	char	**ptr;
 	size_t	i;
 	size_t	start;
 
-	if (s != NULL)
+	if (s == NULL)
 		return (NULL);
-	ptr = (char **)ft_xmalloc(sizeof(char *) * (count_words(s, c) + 1));
+	ptr = malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (ptr == NULL)
+		return (NULL);
 	i = 0;
 	start = 0;
 	while (s[i] != '\0')
@@ -83,9 +75,8 @@ char	**ft_split(char const *s, char c)
 		{
 			ptr[start] = ft_substr(s, i, move_len(s, c, i));
 			if (ptr[start++] == NULL)
-				return (ft_allfree(**ptr));
+				return (allfree(ptr));
 			i += move_len(s, c, i);
-			start++;
 		}
 		else
 			i++;
@@ -94,3 +85,19 @@ char	**ft_split(char const *s, char c)
 	return (ptr);
 }
 
+
+// int main(int argc, char **argv) {
+// 	if (argc == 2) {
+// 		char **strs = ft_split(argv[1], ' ');
+// 		if (strs == NULL) {
+// 			fprintf(stderr, "Error\n");
+// 			return 1;
+// 		}
+// 		size_t i = 0;
+// 		for (; strs[i]; i++) {
+// 			printf("%s\n", strs[i]);
+// 			free(strs[i]);
+// 		}
+// 		free(strs);
+// 	}
+// }
