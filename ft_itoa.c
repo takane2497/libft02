@@ -6,7 +6,7 @@
 /*   By: takonaga <takonaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 23:40:22 by takonaga          #+#    #+#             */
-/*   Updated: 2022/10/20 03:44:57 by takonaga         ###   ########.fr       */
+/*   Updated: 2022/10/20 03:59:54 by takonaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	calculation(long tmp, char *ret, size_t count, size_t *cycle)
 	s2 = tmp % 10;
 	if (s1 != 0)
 	{
-		do_it(s1, ret, count, cycle);
+		calculation(s1, ret, count, cycle);
 		ret += *cycle;
 	}
 	c = s2 + '0';
