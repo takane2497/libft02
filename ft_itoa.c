@@ -6,13 +6,13 @@
 /*   By: takonaga <takonaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 23:40:22 by takonaga          #+#    #+#             */
-/*   Updated: 2022/10/20 00:17:25 by takonaga         ###   ########.fr       */
+/*   Updated: 2022/10/20 03:44:57 by takonaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"libft.h"
 
-static size_t	count_digits(long tmp)
+static size_t	digits_count(long tmp)
 {
 	size_t	count;
 
@@ -25,7 +25,7 @@ static size_t	count_digits(long tmp)
 	return (count);
 }
 
-void	do_it(long tmp, char *ret, size_t count, size_t *cycle)
+void	calculation(long tmp, char *ret, size_t count, size_t *cycle)
 {
 	long	s1;
 	long	s2;
@@ -41,7 +41,8 @@ void	do_it(long tmp, char *ret, size_t count, size_t *cycle)
 	c = s2 + '0';
 	*ret = c;
 	*cycle += 1;
-	if (conut )
+	if (count == *cycle)
+		*(++ret) = '\0';
 }
 
 char	*ft_itoa(int n)
@@ -56,7 +57,7 @@ char	*ft_itoa(int n)
 		return (ft_strdup("0"));
 	if (n < 0)
 		tmp = -tmp;
-	count = count_digits(tmp);
+	count = digits_count(tmp);
 	if (n < 0)
 		ret = (char *)malloc(sizeof(char) * (count +2));
 	else
@@ -66,7 +67,7 @@ char	*ft_itoa(int n)
 	if (n < 0)
 		*ret++ = '-';
 	cycle = 0;
-	do_it(tmp, ret, count, &cycle);
+	calculation(tmp, ret, count, &cycle);
 	if (n < 0)
 		return (ret - 1);
 	return (ret);
