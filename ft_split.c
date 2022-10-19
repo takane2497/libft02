@@ -6,7 +6,7 @@
 /*   By: takonaga <takonaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 17:36:56 by takonaga          #+#    #+#             */
-/*   Updated: 2022/10/19 23:05:18 by takonaga         ###   ########.fr       */
+/*   Updated: 2022/10/19 23:06:19 by takonaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,6 @@ char	**ft_split(char const *s, char c)
 	ptr[start] = NULL;
 	return (ptr);
 }
-
 
 // int main(int argc, char **argv) {
 // 	if (argc == 2) {
