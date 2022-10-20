@@ -6,7 +6,7 @@
 /*   By: takonaga <takonaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 23:40:22 by takonaga          #+#    #+#             */
-/*   Updated: 2022/10/21 00:58:52 by takonaga         ###   ########.fr       */
+/*   Updated: 2022/10/21 06:05:40 by takonaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static size_t	digits_count(long tmp)
 	return (count);
 }
 
-void	calculation(long tmp, char *ret, size_t count, size_t *cycle)
+static void	calculation(long tmp, char *ret, size_t count, size_t *cycle)
 {
 	int64_t	s1;
 	int64_t	s2;
