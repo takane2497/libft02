@@ -6,7 +6,7 @@
 /*   By: takonaga <takonaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 17:36:56 by takonaga          #+#    #+#             */
-/*   Updated: 2022/10/19 23:06:19 by takonaga         ###   ########.fr       */
+/*   Updated: 2022/10/21 00:26:25 by takonaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,6 @@ static size_t	count_words(char const *s, char c)
 
 	words = 0;
 	i = 0;
-	if (c < 0)
-		return (0);
-	if (s[0] != c)
-		words++;
 	while (s[i] != '\0' && s[i + 1] != '\0')
 	{
 		if (s[i] == c && s[i + 1] != c)
